@@ -1,0 +1,23 @@
+{
+  "name": "ghdiff-minimise",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "minimise": "babel src/index.js | node",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Aman Sharma",
+  "license": "MIT",
+  "dependencies": {
+    "parse-diff": "^0.9.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.2.3",
+    "babel-preset-react": "^6.24.1"
+  }
+}

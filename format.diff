@@ -1,0 +1,9 @@
+--- src/test/resources/update/formatting_change/PREV_FormattingChange.java      2021-12-29 17:14:40.186947242 +0100
++++ src/test/resources/update/formatting_change/NEW_FormattingChange.java       2022-02-09 12:54:59.948927583 +0100
+@@ -1,5 +1,5 @@
+ class FormattingChange {
+     public void main(String[] args) {
+-        int x = 1;
++        int y = 1;
+     }
+ }
