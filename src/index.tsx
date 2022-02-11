@@ -1,9 +1,9 @@
-const parse = require("parse-diff");
-const fs = require("fs");
-const React = require("react");
-const ReactDOMServer = require("react-dom/server.node");
+import parseDiff from 'parse-diff'
+import fs from 'fs'
+import React from 'react'
+import ReactDOMServer from 'react-dom/server'
 
-const files = parse(fs.readFileSync("./format.diff").toString());
+const files = parseDiff(fs.readFileSync('./format.diff').toString())
 
 const Diff = () => (
   <table>
@@ -11,13 +11,13 @@ const Diff = () => (
       <Header />
       {files[0].chunks[0].changes.map((change, index) => (
         <React.Fragment key={index}>
-          {change.type === "normal" ? (
+          {change.type === 'normal' ? (
             <Normal
               column1={change.ln1}
               column2={change.ln2}
               code={change.content}
             />
-          ) : change.type === "add" ? (
+          ) : change.type === 'add' ? (
             <Addition column={change.ln} code={change.content} />
           ) : (
             <Deletion column={change.ln} code={change.content} />
@@ -26,7 +26,7 @@ const Diff = () => (
       ))}
     </tbody>
   </table>
-);
+)
 
 const Header = () => (
   <tr>
@@ -36,7 +36,7 @@ const Header = () => (
       {files[0].chunks[0].content}
     </td>
   </tr>
-);
+)
 
 const Normal = ({ column1, column2, code }) => (
   <tr>
@@ -53,7 +53,7 @@ const Normal = ({ column1, column2, code }) => (
       <span className="blob-code-inner blob-code-marker">{code}</span>
     </td>
   </tr>
-);
+)
 
 const Addition = ({ column, code }) => (
   <tr>
@@ -68,12 +68,12 @@ const Addition = ({ column, code }) => (
         className="blob-code-inner blob-code-marker js-code-nav-pass"
         data-code-marker="+"
       >
-        {" "}
+        {' '}
         {code.slice(1)}
       </span>
     </td>
   </tr>
-);
+)
 
 const Deletion = ({ column, code }) => (
   <tr>
@@ -88,11 +88,11 @@ const Deletion = ({ column, code }) => (
         className="blob-code-inner blob-code-marker js-code-nav-pass js-skip-tagsearch"
         data-code-marker="-"
       >
-        {" "}
+        {' '}
         {code.slice(1)}
       </span>
     </td>
   </tr>
-);
+)
 
-console.log(ReactDOMServer.renderToStaticMarkup(<Diff />));
+export default ReactDOMServer.renderToStaticMarkup(<Diff />)

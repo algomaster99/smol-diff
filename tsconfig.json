@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "lib": [
+      "ESNext"
+    ],
+    "jsx": "react-jsx",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "outDir": "build"
+  },
+  "include": [
+    "src/**/*.{ts,tsx}",
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
