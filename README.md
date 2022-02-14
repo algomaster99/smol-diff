@@ -5,7 +5,9 @@ Manipulates the GitHub diff view with a diff generated using
 
 ### Usage
 
-Run `npm run minimise` to get the HTML and paste it in DOM of browser.
+1. Run `npm run watcher` to start-up the server and get the minimised diff at
+`localhost:3000/`.
+2. Paste that minimise diff in the DOM of the pull request.
 
 ### Example
 
